@@ -134,7 +134,7 @@ def main():
     turtle6.change_pen(w=80, r=255, g=184, b=41)
     turtle6.move(lx=0.5, az=1.5, repeat=4)
     
-    turtle7 = Turtle("turtle57)
+    turtle7 = Turtle("turtle7")
     turtle7.change_pen(w=100, r=0, g=138, b=23)
     turtle7.move(lx=12.0)
 
