@@ -1,5 +1,7 @@
 # Pacote ROS em python que move um TurtleBot3 Burguer dentro do Gazebo para coordenada(s)
-## Vídeo demonstração -> https://photos.app.goo.gl/KdwpTX2bpVphMhWX9
+### Vídeo demonstração: [Aqui](https://photos.app.goo.gl/KdwpTX2bpVphMhWX9)
+### Link direto para o código:  [Aqui](/semana4_gazebo_coordinates/semana4_gazebo_coordinates/program.py)
+
 
 Nesse exercício, decidi desenvolver uma solução mais programática e menos matemática.
 É o jeito mais trabalhoso, não tão preciso nem otimizado, porém exercita mais a lógica de programação.
@@ -29,3 +31,4 @@ Para tanto, descrevi as seguintes condições:
         Assim, mesmo que não subamos exatamente no angulo desejado, o movimento do robô assume forma de uma espécie de função oscilatória, que, na média, nos deixa no ângulo desejado.
 
 IMPORTANTE -> O angulo do robô NÃO VAI DE 0 A 360. Ele segue um esquema esquisito, de -180 a 180. Oeste é 180, leste é 0, sul é -90 e norte é 90.
+
