@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Atividade m6 s8</title>
+</head>
+<body>
+    <h1>Google drive <span style="font-size: medium;">v0.2.5</span></h1>
+    <h2> Coloque o ID da sua imagem salva:</h2>
+    <input max="10000" min="0" type="number" id="numberid"> <button id="send">Buscar</button>
+    <br><br>  
+    <img id="img" src="" alt="">
+</body>
+
+<script>
+    document.getElementById("send").addEventListener("click", function(){
+        var id = document.getElementById("numberid").value;
+        var imageUrl = `http://127.0.0.1:8000/images/${id}`;
+
+        fetch(imageUrl, { method: "GET" })
+            .then(response => {
+                if (response.status === 200) {
+                    return response.blob();
+                } else if (response.status === 400) {
+                    throw new Error("O ID selecionado não existe");
+                } else {
+                    throw new Error("Erro ao obter a imagem");
+                }
+            })
+            .then(blob => {
+                var imgUrl = URL.createObjectURL(blob);
+                document.getElementById("img").src = imgUrl;
+            })
+            .catch(error => {
+                alert(error.message);
+            });
+    });
+
+</script>
+</html>
