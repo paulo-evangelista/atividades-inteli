@@ -1,0 +1,17 @@
+#Iniciando a imagem base, python 3.11 
+FROM python:3.11-slim
+
+#Documenta que a porta 8000 desse container será utilizada 
+EXPOSE 8000
+
+#Cria um diretório dentro do container chamado app
+WORKDIR /app
+
+#Copia o diretorio app do projeto para a raiz do WORKDIR
+COPY app/ .
+
+#Instala o framework Sanic dentro do container
+RUN pip install sanic
+
+#Executa o arquivo app.py dentro do container
+CMD [ "python3", "app.py" ]
