@@ -1,4 +1,6 @@
-# Pokedex
+# 🗂️ Pokedex
+
+https://github.com/paulo-evangelista/atividades-inteli/assets/99093520/675fa69b-8d66-4413-ba4b-0817bf2340d0
 
 ## 🐳 Docker hub
 - Frontend: `https://hub.docker.com/repository/docker/pauleradixzz/pokedex-frontend/`
