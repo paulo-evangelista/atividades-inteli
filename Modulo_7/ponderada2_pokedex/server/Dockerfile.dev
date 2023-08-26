@@ -1,0 +1,24 @@
+# ./server/Dockerfile
+
+# Base image
+FROM node:bookworm
+
+# Set working directory
+WORKDIR /app
+
+# Copy package.json and package-lock.json
+COPY package*.json ./
+
+RUN apt install -y python3
+
+
+RUN npm i -g pnpm
+
+# Install dependencies
+RUN pnpm install
+
+# Copy all other source files
+COPY . .
+
+# Start the app
+CMD ["pnpm", "run", "start:dev"]
