@@ -8,8 +8,8 @@ WORKDIR /app
 COPY . .
 
 # Instalando as dependências necessárias
-RUN pip install fastapi[all] uvicorn pycaret h11
+RUN pip install fastapi[all] uvicorn pycaret
 
 # Comando para iniciar a aplicação FastAPI quando o contêiner for iniciado
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
  

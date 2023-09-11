@@ -1,14 +1,16 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-import os
-from pycaret.regression import load_model, predict_model
+from pycaret.regression import load_model
 import pandas as pd
-import os
+from pydantic import BaseModel 
 
-
-
+# classe para Pydantic (tipagem da requisição)
+class body(BaseModel):
+    Age: int
+    Income: float
+    Gender: int
+ 
 app = FastAPI()
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=['*'],
@@ -16,22 +18,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
-
 @app.post("/predict/")
-async def get_prediction(item: dict):
-    # types_validation(item)
+async def get_prediction(item: body):
     try:
-        if os.path.exists("/app/modelo.pkl"):
-            print("File exists.")
-        else:
-            print("File does not exist.")
-
-        df = pd.DataFrame([item])
-        df['Income'] = df['Income'].round(2)
-        model = load_model("/app/modelo")
-        pred = model.predict_model(df)
-        return pred
+        df = pd.DataFrame([item.dict()])
+        model = load_model("/app/model")
+        pred = model.predict(df)
+        return {"predictions": pred.tolist()[0]}
     except Exception as e:
-        raise HTTPException(status_code=400, detail=e)
-
+        return HTTPException(e)
