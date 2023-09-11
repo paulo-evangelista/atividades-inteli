@@ -5,13 +5,11 @@ FROM python:3.8-slim
 WORKDIR /app
 
 # Copiando o conteúdo local para a pasta de trabalho
-COPY . /app
-
-# Fix para erro de instalação do numpy no Alpine (falta de compilador C)
+COPY . .
 
 # Instalando as dependências necessárias
-RUN pip install fastapi[all] uvicorn pycaret
+RUN pip install fastapi[all] uvicorn pycaret h11
 
 # Comando para iniciar a aplicação FastAPI quando o contêiner for iniciado
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
  
