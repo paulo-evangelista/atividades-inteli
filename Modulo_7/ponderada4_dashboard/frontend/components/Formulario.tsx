@@ -1,36 +1,25 @@
 'use client'
 import React from 'react'
-import { toast } from "react-toastify";
+import axios from 'axios';
 import { useState, useEffect } from 'react';
 export default function Formulario() {
     const [lastResultStr, setLastResultStr] = useState('45 anos, sálario de 45k e mulher: 45% em 22/05/2004') 
+    const [selectValue, setSelectValue] = useState(0)
+    const handleSelectChange = (e: any) => {
+      setSelectValue(e.target.value);
+    };
+
     const handleSubmit = (e: any) => {
       e.preventDefault();
       const formData = new FormData(e.target);
+      formData.append("gender", selectValue.toString())
       const data = Object.fromEntries(formData);
-      const id = toast.loading("Your message is being sent...");
-      fetch("/api/contact", {
-        method: "POST",
-        body: JSON.stringify(data),
-      }).then((res) => {
-        if (res.status === 200) {
-          toast.update(id, {
-            render: "Message sent! we'll be in touch soon!",
-            type: "success",
-            isLoading: false,
-            autoClose: 4000,
-            closeButton: true,
-          });
-        } else {
-          toast.update(id, {
-            render: "Oops, there was a problem sending your message :(",
-            type: "error",
-            isLoading: false,
-            autoClose: 4000,
-            closeButton: true,
-          });
-        }
-      });
+      console.log(data)
+      axios.post("http://localhost:4000/client/run", data
+      ).then((res) => {
+        const {age: resAge, income: resIncome, gender: resGender, result: resResult} = res.data
+        setLastResultStr(`${resAge} anos, sálario de ${resIncome}k e ${resGender} → ${resResult}%`)
+      })
     };
 
   return (
@@ -38,9 +27,9 @@ export default function Formulario() {
         <form onSubmit={handleSubmit}>
             <input type="number" name="age" placeholder="idade" className='bg-gray-300 rounded w-20'/>
             <input type="text" name="income" placeholder="Sálario (em kR$/mês)"  className='bg-gray-300 rounded mx-4'/>
-            <select name="" id="" placeholder='Gênero'>
-                <option value="0">Masculino</option>
-                <option value="1">Feminino</option>
+            <select name="" id="" placeholder='Gênero' value={selectValue} onChange={handleSelectChange}>
+                <option value={0}>Masculino</option>
+                <option value={1}>Feminino</option>
             </select>
             <button className='rounded p-2 bg-blue-500 mx-4 px-4 hover:scale-110 hover:bg-blue-400 transition' type={"submit"}>Enviar</button>
         </form>
