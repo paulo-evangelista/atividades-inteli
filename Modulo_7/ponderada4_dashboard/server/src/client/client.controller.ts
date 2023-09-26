@@ -37,4 +37,14 @@ export class ClientController {
   async getAllRuns() {
     return await this.clientService.getAllRuns();
   }
+
+  @Get('/statistics')
+  async getStatistics() {
+    return await this.clientService.getStatistics();
+  }
+  
+  @Get('/historic')
+  async getHistoric() {
+    return await this.clientService.getHistoric();
+  }
 }
