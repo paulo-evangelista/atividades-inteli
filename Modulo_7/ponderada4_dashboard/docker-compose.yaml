@@ -1,0 +1,50 @@
+version: '3'
+services:
+
+
+
+  frontend:
+    container_name: nextjs
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+
+
+
+  server:
+    container_name: nestjs
+    build:
+      context: ./server
+      dockerfile: Dockerfile.dev
+    ports:
+      - "4000:4000"
+    networks:
+      - privateNetwork
+    depends_on:
+      - postgres
+
+
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydb
+    ports:
+      - "5432:5432"
+    networks:
+      - privateNetwork
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
+
+
+networks:
+  privateNetwork:
+    driver: bridge
