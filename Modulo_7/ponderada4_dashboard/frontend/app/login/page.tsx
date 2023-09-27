@@ -8,7 +8,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
 
   const handleLogin = () => {
-    axios.post("http://localhost:4000/auth/login", {
+    axios.post("http://44.201.102.34:4000/auth/login", {
     username: user,
     password: password
     }).then((res) => {

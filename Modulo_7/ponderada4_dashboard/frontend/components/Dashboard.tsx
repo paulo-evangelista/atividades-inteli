@@ -10,7 +10,7 @@ export default function Dashboard() {
   const [ageVsIncome, setAgeVsIncome] = useState([]);
   const [maleVsFemale, setMaleVsFemale] = useState([{ name: 'male', value: 9 },{ name: 'female', value: 4 }]);
   const updateStatistics = () => {
-    axios.get("http://localhost:4000/client/statistics").then((response) => {
+    axios.get("http://44.201.102.34:4000/client/statistics").then((response) => {
       console.log(response.data);
       setAgeVsIncome(response.data.ageVsIncome);
       setMaleVsFemale(response.data.maleVsFemale);
