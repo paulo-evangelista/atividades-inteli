@@ -2,7 +2,13 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios';
 export default function Historic() {
-    const [historicData, setHistoricData] = useState([])
+    const [historicData, setHistoricData] = useState([{
+      created_at: "00",
+      gender: "a",
+      income: "12",
+      age: "12",
+      result: "0"
+    }])
     useEffect(()=>{
         axios.get("http://localhost:4000/client/historic").then((response) => {
       setHistoricData(response.data);
