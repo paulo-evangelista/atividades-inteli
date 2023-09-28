@@ -11,7 +11,7 @@ import { Runs } from './entities/runs.entity';
   imports: [ClientModule, AuthModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: 'postgres',
       port: 5432,
       username: 'user',
       password: 'password',

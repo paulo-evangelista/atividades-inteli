@@ -10,7 +10,7 @@ export default function Historic() {
       result: "0"
     }])
     useEffect(()=>{
-        axios.get("http://ec2-54-166-116-198.compute-1.amazonaws.com:4000/client/historic").then((response) => {
+        axios.get("server:4000/client/historic").then((response) => {
       setHistoricData(response.data);
     });
     },[])

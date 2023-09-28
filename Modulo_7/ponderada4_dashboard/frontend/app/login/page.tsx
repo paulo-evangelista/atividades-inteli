@@ -9,7 +9,7 @@ export default function Login() {
 
   const handleLogin = () => {
     console.log("sending request")
-    axios.post("http://ec2-54-166-116-198.compute-1.amazonaws.com:4000/auth/login", {
+    axios.post("server:4000/auth/login", {
     username: user,
     password: password
     }).then((res) => {

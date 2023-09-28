@@ -5,23 +5,23 @@ services:
 
   frontend:
     container_name: nextjs
+    image: pauleradixzz/m7pond4-frontend:latest
     build:
       context: ./frontend
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
 
 
 
   server:
-    container_name: nestjs
+    container_name: server
+    image: pauleradixzz/m7pond4-server:latest
     build:
       context: ./server
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     ports:
       - "4000:4000"
-    networks:
-      - privateNetwork
     depends_on:
       - postgres
 
@@ -36,15 +36,8 @@ services:
       POSTGRES_DB: mydb
     ports:
       - "5432:5432"
-    networks:
-      - privateNetwork
     volumes:
       - pgdata:/var/lib/postgresql/data
 
 volumes:
   pgdata:
-
-
-networks:
-  privateNetwork:
-    driver: bridge

@@ -15,7 +15,7 @@ export default function Formulario() {
       formData.append("gender", selectValue.toString())
       const data = Object.fromEntries(formData);
       console.log(data)
-      axios.post("http://ec2-54-166-116-198.compute-1.amazonaws.com:4000/client/run", data
+      axios.post("server:4000/client/run", data
       ).then((res) => {
         const {age: resAge, income: resIncome, gender: resGender, result: resResult} = res.data
         setLastResultStr(`${resAge} anos, sálario de ${resIncome}k e ${resGender} → ${resResult}%`)
