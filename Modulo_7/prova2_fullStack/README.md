@@ -1,18 +1,20 @@
-# 🗂️ Prova 2 - Módulo 7
-### FullStack em cloud
+# 🗂️ Prova 2 - 🎨 FullStack em cloud
+https://github.com/paulo-evangelista/atividades-inteli/assets/99093520/9ddf5b22-bd77-4f8a-a6e9-87faecb5936c
 
-> Repo original: (Murilo-ZC/Avaliacao-P2-M7-2023-EC)[https://github.com/Murilo-ZC/Avaliacao-P2-M7-2023-EC/tree/main]
-## 🤌 Quais passos apliquei?
+
+
+> Repo com o template e instruções: [Murilo-ZC/Avalicacao-M7-2023-EC](https://github.com/Murilo-ZC/Avaliacao-P2-M7-2023-EC/tree/main)
+## 🤌 Quais passos apliquei?22
 - Antes de mais nada fui na AWS e criei dois EC2 e um RDS
-- Garanti que todos estavam com comunicação liberada para qualquer IP
-- Testei a conexão com o DB e fiz um ping para as EC2. Tudo funcionou
-- Alterei javascript do front para colocar os endereços do meu servidor
-- Alterei o FastAPI para colocar a conexão do meu DB
-- Tentei Rodar o script python fornecido para criar as tabelas do DB
-- Não funcionou, então conectei o banco no DBeaver e rodei o SQL direto por lá
-- Joguei tudo do repositório original para esse aqui e clonei ele dentro das duas máquinas
+- Garanti que todos estavam com comunicação liberada par2a qualquer IP
+- Testei a conexão com o DB e fiz um ping para as EC2. Tudo func2ionou2222
+- Alterei javascript do front para colocar os endereços do meu servidor2
+- Alterei o FastAPI para colocar a conexão do meu DB2
+- Tentei Rodar o script python fornecido para criar as tabelas do DB2
+- Não funcionou, então conectei o banco no DBeaver e rodei o SQL direto por lá2
+- Joguei tudo do repositório original para esse aqui e clonei ele dentro das duas máquinas2
 - na primeira máquina, instalei PIP e as dependencias necessárias para rodar o servidor
-- Coloquei o servidor pra rodar
+- Coloquei o servidor pra rodar2
 - Instalei Apache na segunda máquina e coloquei ele também pra rodar
 - Corrigi os bugs do Murilo
 - e gravei o vídeo
