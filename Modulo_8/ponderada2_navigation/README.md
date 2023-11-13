@@ -1,4 +1,4 @@
-# Navegação SLAM
+# 🚙 Navegação SLAM
 
 
 https://github.com/paulo-evangelista/atividades-inteli/assets/99093520/d851dd1b-dd0c-4197-876f-9ba39f9f80d6
@@ -11,7 +11,7 @@ https://github.com/paulo-evangelista/atividades-inteli/assets/99093520/d851dd1b-
 - Agora já podemos usar o outro launch, `nav_launch.xml`
 - Esse launch puxa o mapa salvo anteriormente automaticamente e navega pelos pontos pré-definidos no script
 - Podemos navegar quantas vezes quisermos sem refazer o mapa ou a pose do robô
-
+  🎇
 ## ❓ Como executar?
 - **Clone o repositório**
 - **Entre na pasta** *ros2_ws*: `cd ros2_ws/`
