@@ -21,9 +21,11 @@ setup(
     description='TODO: Package description',
     license='TODO: License declaration',
     tests_require=['pytest'],
+    requires=['rclpy', 'nav_msgs', 'turtlebot3_navigation2', 'turtlebot3_gazebo'],
     entry_points={
         'console_scripts': [
-            'map_jobs = navigation.map_jobs:main'
+            'map_saver = navigation.map_saver:main',
+            'nav_navigate = navigation.nav_navigate:main'
         ],
     },
 )   

@@ -1,15 +1,10 @@
 <launch>
 
-    <node pkg="navigation" exec="map_jobs" name="map_jobs"/>
-
-    <include file="$(find-pkg-share turtlebot3_gazebo)/launch/turtlebot3_world.launch.py"/>
-
+    <node pkg="navigation" exec="map_saver" name="map_saver"/>
     
-    <include file="$(find-pkg-share turtlebot3_cartographer)/launch/cartographer.launch.py">
+    <include file="$(find-pkg-share turtlebot3_navigation2)/launch/navigation2.launch.py">
         <arg name="use_sim_time" value="True"/>
-    </include>
-    
-    <node pkg="turtlebot3_teleop" exec="teleop_keyboard" name="teleop" launch-prefix="gnome-terminal -- "/>
-    
+        <arg name="slam" value="True"/>
+    </include>    
     
 </launch>
