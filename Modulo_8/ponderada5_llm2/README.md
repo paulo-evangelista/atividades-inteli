@@ -1,7 +1,9 @@
-# 🗂️ fastAPI & AWS & AI
+# 🗂️ Chatbot Ollama v2
 
-> Como cada prompt demora 70 segundos, resumi o vídeo em um screenshot :)
-![Screenshot from 2023-11-25 23-51-43](https://github.com/paulo-evangelista/atividades-inteli/assets/99093520/d6e5e8ea-5754-496a-b5cb-d66273ce281a)
+Mesmo modelo e código [dessa atividade](https://github.com/paulo-evangelista/atividades-inteli/tree/main/Modulo_8/ponderada4_llm), mas agora com uma [mensagem de sistema](https://github.com/paulo-evangelista/atividades-inteli/blob/main/Modulo_8/ponderada5_llm2/context.py) que contextualiza as respostas do modelo com informações sobre segurança de alunos em aulas práticas no laboratório.
+
+> Como cada prompt demora 100 segundos, resumi o vídeo em um screenshot :)
+![image](https://github.com/paulo-evangelista/atividades-inteli/assets/99093520/c81b97b1-9be3-4cd8-a944-2ba3cd0328b6)
 
 ## ❓ Como rodar o projeto
 
