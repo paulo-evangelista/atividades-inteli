@@ -1,4 +1,4 @@
-# 🗂️ fastAPI & AWS & AI
+# 🗂️ Chatbot Ollama
 
 > Como cada prompt demora 70 segundos, resumi o vídeo em um screenshot :)
 ![Screenshot from 2023-11-25 23-51-43](https://github.com/paulo-evangelista/atividades-inteli/assets/99093520/d6e5e8ea-5754-496a-b5cb-d66273ce281a)
