@@ -1,5 +1,12 @@
 # 🗂️ Chatbot Ollama v2
 
+---
+
+> [!NOTE]
+> Se você está procurando a atividade de tradução com TTS e STT, ela está [aqui](https://github.com/paulo-evangelista/atividades-inteli/edit/main/Modulo_8/ponderada8_translate)
+
+---
+
 Mesmo modelo e código [dessa atividade](https://github.com/paulo-evangelista/atividades-inteli/tree/main/Modulo_8/ponderada4_llm), mas agora com uma [mensagem de sistema](https://github.com/paulo-evangelista/atividades-inteli/blob/main/Modulo_8/ponderada5_llm2/context.py) que contextualiza as respostas do modelo com informações sobre segurança de alunos em aulas práticas no laboratório.
 
 > Como cada prompt demora 100 segundos, resumi o vídeo em um screenshot :)
