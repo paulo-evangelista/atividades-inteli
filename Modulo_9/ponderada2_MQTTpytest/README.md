@@ -2,11 +2,17 @@
 
 Usando o mesmo publisher da ponderada 1, criei um subscriber que realiza testes unitários.
 
+
+
+https://github.com/paulo-evangelista/atividades-inteli/assets/99093520/097f533c-f62e-4318-9d12-c54485e90d92
+
+
+
 ## Testes realizados:
 
 - **Teste 1 - Recebimento:** Confirma que as mensagens estão sendo enviadas e são acessíveis por subscribers.
 - **Teste 2 - Estrutura:** Valida a estrutura do corpo da mensagem enviada.
-- **Teste 3 - Latência:** Confirma que as mensagens estão chegando no intervalo esperado de tempo, 2 segundo, com uma margem de erro de 0,5 segundos.
+- **Teste 3 - Latência:** Confirma que as mensagens estão chegando no intervalo esperado de tempo, 2 segundos, com uma margem de erro de 0,5 segundos.
 
 ## Como rodar o script:
 
