@@ -19,7 +19,7 @@ def simulate_sps30_data():
     return json.dumps(hex_data)
 
 def on_connect(mqttc, obj, flags, reason_code, properties):
-    print("reason_code: " + str(reason_code))
+    print("reason_code: " + str(reason_code)+"\n")
 def on_message(mqttc, obj, msg):
     print(msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
 def on_publish(mqttc, obj, mid, reason_code, properties):
@@ -37,14 +37,14 @@ print("connecting to broker...")
 connection = client.loop_start()
 
 if connection == 0:
-    print("connected to broker")
+    print("connected to broker at:", broker_address)
 
 try:
     while True:
         sensor_data = simulate_sps30_data()
         info = client.publish(topic, sensor_data, qos=1)
         mid = info.wait_for_publish()
-        print("sent")
+        print("sent on topic:", topic)
         print(sensor_data, "\n")
         time.sleep(2)
 
