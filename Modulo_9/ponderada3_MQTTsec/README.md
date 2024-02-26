@@ -1,22 +1,12 @@
-# Testes automatizados para MQTT
+# Segurança para MQTT
 
-Usando o mesmo publisher da ponderada 1, criei um subscriber que realiza testes unitários.
+Está atividade compreende a utilização do broker HiveMQ com segurança, como usar usuário e senha para autenticação e usar TLS.
 
+**A ponderada feita anteriormente já compreende esses requisitos, portanto vou deixar apenas o link dela aqui. Todas as instruções e demonstração lá permanecem vãlidas.**
 
+[Ponderada 2: Testes automatizados para MQTT](https://github.com/paulo-evangelista/atividades-inteli/tree/main/Modulo_9/ponderada2_MQTTpytest)
 
-https://github.com/paulo-evangelista/atividades-inteli/assets/99093520/097f533c-f62e-4318-9d12-c54485e90d92
+- A utilização de TLS é evidenciada tanto pela porta do broker usada (porta `8883`, padrão para conexão MQTTS) quanto na configuração do cliente MQTT, com a opção `client.tls_set()`
 
-
-
-## Testes realizados:
-
-- **Teste 1 - Recebimento:** Confirma que as mensagens estão sendo enviadas e são acessíveis por subscribers.
-- **Teste 2 - Estrutura:** Valida a estrutura do corpo da mensagem enviada.
-- **Teste 3 - Latência:** Confirma que as mensagens estão chegando no intervalo esperado de tempo, 2 segundos, com uma margem de erro de 0,5 segundos.
-
-## Como rodar o script:
-
-- Clone o repositório
-- Instale a biblioteca Paho-MQTT e Pytest com `pip3 install paho-mqtt==2.0.0 pytest==8.0.1`
-- dentro do repositório, execute primeiro o script do publisher com `python3 publisher.py`
-- Com o publisher ainda rodando, em outro terminal, execute os testes com `pytest subscriber.py`
+- A autenticação é evidenciada na configuração do cliente MQTT, com a linha `client.username_pw_set(mqtt_username, mqtt_password)
+`
