@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: username # Replace with your desired user
+      POSTGRES_PASSWORD: password # Replace with your desired password
+      POSTGRES_DB: db # Replace with your desired database name
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  metabase:
+    image: metabase/metabase:latest
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_DBNAME: db # Must match POSTGRES_DB above
+      MB_DB_PORT: 5432
+      MB_DB_USER: username # Must match POSTGRES_USER above
+      MB_DB_PASS: password # Must match POSTGRES_PASSWORD above
+      MB_DB_HOST: postgres
+    ports:
+      - 3000:3000
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:
