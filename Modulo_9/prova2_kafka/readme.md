@@ -8,3 +8,9 @@ https://github.com/paulo-evangelista/atividades-inteli/assets/99093520/eaac07c9-
 - O segundo programa, `consumer.py`, consome os dados do Kafka e insere-os no MongoDB, para persistência dos dados. Após isso, rodamos dois testes:
   - O primeiro testa se todos os dados que foram consumidos estão inseridos no banco.
   - O segundo confere se todos os objetos salvos tem a estrutura desejada, com as chaves `["idSensor", "timestamp", "tipoPoluente", "nivel"]`.
+
+## Como executar
+- Primeiro rode os containers docker, com `docker compose up`
+- Certifique-se que tem as bibliotecas necessárias instaladas com `pip install kafka-python pymongo pytest`
+- Agora execute o producer, com `python pub.py`
+- E para consumir as mensagens, rode `pytest consumer.py` 
