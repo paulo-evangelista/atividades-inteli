@@ -1,16 +1,23 @@
-# 🪳 Kafka e MongoDB 🙉 
+# 🪳Kafka, 🍯HiveMQ e 🐍Pytest 
 
-### Enunciado: [Aqui!](https://rmnicola.github.io/m9-ec-encontros/would-you-kindly/)
+### Enunciado: [Aqui!](https://rmnicola.github.io/m9-ec-encontros/ponderada7)
 
-https://github.com/paulo-evangelista/atividades-inteli/assets/99093520/eaac07c9-853e-485b-bda9-2b1b49f72839
+https://github.com/paulo-evangelista/atividades-inteli/assets/99093520/1d59852e-04c0-4c96-802b-dd73b91571c9
 
-- O primeiro programa, `pub.py`, é responsável por criar dados simulados de um sensor e enviá-los para o Kafka.
-- O segundo programa, `consumer.py`, consome os dados do Kafka e insere-os no MongoDB, para persistência dos dados. Após isso, rodamos dois testes:
-  - O primeiro testa se todos os dados que foram consumidos estão inseridos no banco.
-  - O segundo confere se todos os objetos salvos tem a estrutura desejada, com as chaves `["idSensor", "timestamp", "tipoPoluente", "nivel"]`.
+Sistema com Cluster MQTT no HiveMQ Cloud integrado com Confluent Cloud
+
+- `test.py`: Programa Pytest que testa se as mensagens estão disponíveis, se a estrutura está correta e se elas estão corretamente sequenciadas.
+- `publisher.py`: Envia mensagens simuladas para o HiveMQ.
 
 ## Como executar
-- Primeiro rode os containers docker, com `docker compose up`
-- Certifique-se que tem as bibliotecas necessárias instaladas com `pip install kafka-python pymongo pytest`
-- Agora execute o producer, com `python pub.py`
-- E para consumir as mensagens, rode `pytest consumer.py` 
+
+> [!IMPORTANT]
+> **Para executar esse projeto, você precisará:**
+> - Um cluster no HiveMQ Cloud, com uma Integration com o Confluent Cloud.
+> - Um Kafka devidamente configurado na Confluent Cloud.
+> - Um arquivo `client.properties` com os dados da API do seu Kafka
+> - Alterar ambos os arquivos com seus dados, como login do HiveMQ e o nome do tópico.
+
+- Com o que foi mencionado acima funcionando, basta instalar as bibliotecas com `pip install paho-mqtt confluent_kafka pytest`
+- Para rodar os testes no Kafka, basta rodar `pytest test.py`
+- Para enviar mensagens MQTT e alimentar o Kafka, basta executar `python publisher.py`
