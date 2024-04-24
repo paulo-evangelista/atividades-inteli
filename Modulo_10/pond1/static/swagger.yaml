@@ -25,7 +25,7 @@ paths:
         - basicAuth: []
   /createTask:
     post:
-      summary: Cria uma nova tarefa
+      summary: Cria uma nova tarefa e retorna
       operationId: createTask
       tags:
         - Tarefas
@@ -44,9 +44,9 @@ paths:
                 $ref: '#/components/schemas/Task'
       security:
         - basicAuth: []
-  /tasks/{task_id}:
+  /getTask/{id}:
     get:
-      summary: Obtém detalhes de uma tarefa específica
+      summary: Obtém detalhes de uma tarefa específica por ID
       operationId: getTask
       tags:
         - Tarefas
@@ -67,8 +67,9 @@ paths:
           description: Tarefa não encontrada
       security:
         - basicAuth: []
+  /updateTask/{id}:
     put:
-      summary: Atualiza uma tarefa existente
+      summary: Atualiza uma tarefa existente por ID
       operationId: updateTask
       tags:
         - Tarefas
@@ -89,8 +90,9 @@ paths:
           description: Tarefa atualizada com sucesso
       security:
         - basicAuth: []
+  /deleteTask/{id}:
     delete:
-      summary: Deleta uma tarefa específica
+      summary: Deleta uma tarefa por ID
       operationId: deleteTask
       tags:
         - Tarefas

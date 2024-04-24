@@ -18,8 +18,7 @@ swaggerui_blueprint = get_swaggerui_blueprint(
 app.register_blueprint(swaggerui_blueprint, url_prefix=SWAGGER_URL)
 
 users = {
-    "paulo": generate_password_hash("senha1"),
-    "user2": generate_password_hash("senha2")
+    "paulo": generate_password_hash("senha"),
 }
 
 tasks = []
@@ -29,12 +28,12 @@ def verify_password(username, password):
     if username in users and check_password_hash(users.get(username), password):
         return username
 
-@app.route('/tasks', methods=['GET'])
+@app.route('/getAllTasks', methods=['GET'])
 @auth.login_required
 def get_tasks():
     return jsonify(tasks)
 
-@app.route('/tasks', methods=['POST'])
+@app.route('/createTask', methods=['POST'])
 @auth.login_required
 def add_task():
     data = request.get_json()
@@ -45,7 +44,7 @@ def add_task():
     tasks.append(data)
     return make_response(jsonify(data), 201)
 
-@app.route('/tasks/<int:task_id>', methods=['GET'])
+@app.route('/getTask/<int:task_id>', methods=['GET'])
 @auth.login_required
 def get_task(task_id):
     task = next((task for task in tasks if task['id'] == task_id), None)
@@ -54,7 +53,7 @@ def get_task(task_id):
     else:
         return make_response(jsonify({"message": "Tarefa não encontrada"}), 404)
 
-@app.route('/tasks/<int:task_id>', methods=['PUT'])
+@app.route('/updateTask/<int:task_id>', methods=['PUT'])
 @auth.login_required
 def update_task(task_id):
     task = next((task for task in tasks if task['id'] == task_id), None)
@@ -65,7 +64,7 @@ def update_task(task_id):
     else:
         return make_response(jsonify({"message": "Tarefa não encontrada"}), 404)
 
-@app.route('/tasks/<int:task_id>', methods=['DELETE'])
+@app.route('/deleteTask/<int:task_id>', methods=['DELETE'])
 @auth.login_required
 def delete_task(task_id):
     global tasks
