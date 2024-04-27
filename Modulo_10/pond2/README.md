@@ -1,11 +1,18 @@
-# 📒 API To-do list
+# 📒 API To-do list v2
 
-(Entrega parcial 2)
+~(Entrega parcial 1)~
 
-::: tip
+**(Entrega parcial 2)**
 
+> [!IMPORTANT]
+> Mudanças entre a primeira parcial (pond1) e essa (pond2):
+> - Dockerização
+>   - Para executar o projeto, basta rodar `docker compose up` no diretório `Modulo_10/pond2`
+> - Servidor Gunicorn.
+>
+> Tirando isso, as funcionalidades são as mesmas da pond1 ⬇️
 
-
+---
 
 ![m10pond1](https://github.com/paulo-evangelista/atividades-inteli/assets/99093520/dddc9270-a116-4a2c-8d83-34620ed82311)
 
