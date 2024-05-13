@@ -1,32 +1,18 @@
-# 📒 API To-do list v2
-
-~(Entrega parcial 1)~
-
-~(Entrega parcial 2)~
+# 📒 API To-do list w/ Flutter
 
 **Ponderada 2**
 
-> [!IMPORTANT]
-> Mudanças entre a primeira parcial (pond1) e essa (pond2):
-> - Dockerização
->   - Para executar o projeto, basta rodar `docker compose up` no diretório `Modulo_10/pond2`
-> - Servidor Gunicorn.
-> - Vídeo de demonstração da API.
-> Tirando isso, as funcionalidades são as mesmas da pond1 ⬇️
+[m10pond2.webm](https://github.com/paulo-evangelista/atividades-inteli/assets/99093520/722ae35b-67a6-464f-a118-d8a0ae54775e)
+> No vídeo, não rodei o servidor pelo Docker pois configurei nele um servidor WSGI, que não tem esses logs de debug.
 
----
 
-## 🧩 Features
+Pegamos a [ponderada passada](https://github.com/paulo-evangelista/atividades-inteli/tree/main/Modulo_10/pond1.2) e adicionamos um app Flutter que usa todas as funcionalidades do nosso servidor
 
-- Threading desligado, totalmente síncrono.
-- As tarefas ficam em memória.
-- Autenticação (Basic Auth).
-- Documentação OpenAPI (em /static/collection.json).
-- Página Swagger.
-- Criar, listar, alterar e excluir tarefas.
+- Criar lembretes
+- Apagar lembretes
+- excluir lembretes 
 
 ## ❓ Como executar
 - Clone o repositório e instale as bibliotecas necessárias com `pip3 install flask flask-swagger-ui Flask-HTTPAuth flask-CORS`
-- Rode o servidor com `python3 app.py`
-  - Para autenticação, use o usuário `paulo` e a senha `senha` 
-  - Acesse a documentação Swagger em `localhost:5000/docs`
+- Rode o servidor com `python3 api/app.py` OU `docker compose up` (nesse caso não é necessário instalar as bibliotecas ⬆)
+- Abra um emulador Android e execute o app (Procedimento varia dependendo de como você instalou o Flutter)
