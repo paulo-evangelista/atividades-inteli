@@ -1,0 +1,89 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "m10prova1",
+    "dateExported": "2024-05-17T12:53:39.162Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "353c8739-43a1-494c-8d4e-a75fe64429c7",
+            "colId": "7e48b077-a14f-4c89-afa7-77962a63e8ed",
+            "containerId": "",
+            "name": "Retorna todos os pedidos",
+            "url": "localhost:5000/pedidos",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-05-17T12:42:33.450Z",
+            "modified": "2024-05-17T12:42:51.431Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f71802fa-2587-4365-8f3c-8aba6851288d",
+            "colId": "7e48b077-a14f-4c89-afa7-77962a63e8ed",
+            "containerId": "",
+            "name": "Cria um pedido",
+            "url": "localhost:5000/novo",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-05-17T12:42:59.221Z",
+            "modified": "2024-05-17T12:44:24.268Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"user\": \"paulo\",\n  \"email\": \"paulo@paulo.com\",\n  \"description\": \"me tranquei pra fora da empresa\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "78e039a6-a9e7-4ca2-91c6-c1c9154f13fe",
+            "colId": "7e48b077-a14f-4c89-afa7-77962a63e8ed",
+            "containerId": "",
+            "name": "Atualiza um pedido por ID",
+            "url": "localhost:5000/pedidos/1",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-05-17T12:44:40.207Z",
+            "modified": "2024-05-17T12:48:59.200Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Pa22ulinho\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "bd34619c-7e3c-4d7c-9dd2-92cb985d92e7",
+            "colId": "7e48b077-a14f-4c89-afa7-77962a63e8ed",
+            "containerId": "",
+            "name": "Remove um pedido por ID",
+            "url": "localhost:5000/pedidos/1",
+            "method": "DELETE",
+            "sortNum": 45000,
+            "created": "2024-05-17T12:50:54.349Z",
+            "modified": "2024-05-17T12:50:54.349Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "dc46c81f-aca4-4a34-abb4-8bdc30d1ce45",
+            "colId": "7e48b077-a14f-4c89-afa7-77962a63e8ed",
+            "containerId": "",
+            "name": "Retorna um pedido por ID",
+            "url": "localhost:5000/pedidos/1",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-05-17T12:50:16.745Z",
+            "modified": "2024-05-17T12:50:26.710Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
