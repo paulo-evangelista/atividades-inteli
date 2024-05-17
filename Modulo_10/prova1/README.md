@@ -1,18 +1,49 @@
-# 📒 API To-do list w/ Flutter
+# 📒 Prova 1
 
-**Ponderada 2**
+Features:
+  - Dockerfile devidamente configurado para produção
+  - API Rest de nível 2, com recurso definido e verbos HTTP devidos.
+  - O arquivo `api-collection.json` pode ser importado em qualquer cliente API para testes
 
-[m10pond2.webm](https://github.com/paulo-evangelista/atividades-inteli/assets/99093520/722ae35b-67a6-464f-a118-d8a0ae54775e)
-> No vídeo, não rodei o servidor pelo Docker pois configurei nele um servidor WSGI, que não tem esses logs de debug.
+Rotas:
+  - `/novo:` **(POST)** Cria um novo pedido a partir das informações do body.
+  - `/pedidos`
+    - `/` **(GET)** Retorna todos os pedidos.
+    - `/:id` **(PUT)** Atualiza o pedido com as informações do body.
+    - `/:id` **(DELETE)** Deleta o pedido.
+    - `/:id` **(GET)** Retorna o pedido.
 
+Explicação:
 
-Pegamos a [ponderada passada](https://github.com/paulo-evangelista/atividades-inteli/tree/main/Modulo_10/pond1.2) e adicionamos um app Flutter que usa todas as funcionalidades do nosso servidor
+- Tudo está no arquivo `app.py`. Os pedidos são salvos no objeto global `pedidos` e as rotas apenas manipulam esse objeto.
 
-- Criar lembretes
-- Apagar lembretes
-- excluir lembretes 
+Collection:
+
+![Screenshot from 2024-05-17 09-56-51](https://github.com/paulo-evangelista/atividades-inteli/assets/99093520/3c8cfcce-75f5-4adc-9124-765f62c4b0aa)
 
 ## ❓ Como executar
-- Clone o repositório e instale as bibliotecas necessárias com `pip3 install flask flask-swagger-ui Flask-HTTPAuth flask-CORS`
-- Rode o servidor com `python3 api/app.py` OU `docker compose up` (nesse caso não é necessário instalar as bibliotecas ⬆)
-- Abra um emulador Android e execute o app (Procedimento varia dependendo de como você instalou o Flutter)
+- Clone o repositório e certifique-se que o docker está corretamente instalado.
+- Builde a imagem Docker com `docker build -t m10prova1 .`
+- Rode a imagem, expondo a porta 5000, com `docker run -p 5000:5000 m10prova1`
+
+## ❓ Enunciado
+``` 
+Para a questão prática da avaliação, você deve entregar uma API de nível de maturidade 2 no Modelo de Maturidade de Richardson, escrita em Python.
+Você deve criar um dois recursos permitam ao usuário realizar um cadastro de um pedido. Esse pedido deve possuir o nome do usuário, o e-mail do usuário e a descrição do pedido. Ele deve ser enviado como um JSON. 
+
+O seu sistema deve fornecer, no mínimo, as seguintes rotas:
+
+●      /novo: cadastrar um novo pedido. Recebe um JSON e retorna um ID.
+
+●      /pedidos: retorna todos os pedidos cadastrados
+
+●      /pedidos/<id>: retorna o pedido do ID fornecido. Se esse pedido não existir, retornar que não foi possível locallizar ele, da forma mais apropriada para atender as questões do problema proposto.
+
+O recurso / pedidos/<id> ainda deve possibilitar editar o pedido e excluir ele, implementados em recursos distintos.
+
+Nenhuma interface gráfica deve ser implementada, apenas as rotas. Elas devem ser testadas utilizando collections do Insomnia. Essas coleções devem ser exportadas no repositório.
+
+A solução deve ser dockerizada.
+
+Não existe a necessidade de armazenar as requisições em disco, pode ser utilizado apenas memória.
+
