@@ -1,0 +1,101 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "m10pond1",
+    "dateExported": "2024-04-24T03:13:20.438Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "044f9475-acd1-4c3f-a755-e5f329793416",
+            "colId": "7581f35a-17e5-4d72-ae49-def9e671034e",
+            "containerId": "",
+            "name": "pegar todas as tarefas",
+            "url": "localhost:5000/getAllTasks",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-04-23T23:36:51.692Z",
+            "modified": "2024-04-24T03:10:20.379Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "auth": {
+                "type": "basic",
+                "basic": {
+                    "username": "paulo",
+                    "password": "paulo"
+                }
+            },
+            "tests": []
+        },
+        {
+            "_id": "93335f5c-5525-4830-856f-a4b90203eac6",
+            "colId": "7581f35a-17e5-4d72-ae49-def9e671034e",
+            "containerId": "",
+            "name": "pegar uma tarefa específica",
+            "url": "localhost:5000/getTask/",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2024-04-23T23:41:26.450Z",
+            "modified": "2024-04-24T03:10:31.460Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "b78c7b77-1dde-4963-acaf-3ffbd3976954",
+            "colId": "7581f35a-17e5-4d72-ae49-def9e671034e",
+            "containerId": "",
+            "name": "criar tarefa",
+            "url": "localhost:5000/createTask",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-04-23T23:37:49.359Z",
+            "modified": "2024-04-24T03:10:39.187Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"outra tarefa\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "1eab05f5-fadb-4be7-9359-adf8936fddf6",
+            "colId": "7581f35a-17e5-4d72-ae49-def9e671034e",
+            "containerId": "",
+            "name": "Editar uma tarefa",
+            "url": "localhost:5000/updateTask",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-04-23T23:38:43.353Z",
+            "modified": "2024-04-24T03:10:48.246Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"Essa aqui foi alterada\"\n}",
+                "form": []
+            },
+            "reqType": "put",
+            "tests": []
+        },
+        {
+            "_id": "10f0964c-a6a3-493d-b380-83417a2293b0",
+            "colId": "7581f35a-17e5-4d72-ae49-def9e671034e",
+            "containerId": "",
+            "name": "remover tarefa",
+            "url": "localhost:5000/deleteTask",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-04-23T23:40:27.818Z",
+            "modified": "2024-04-24T03:10:57.276Z",
+            "headers": [],
+            "params": [],
+            "reqType": "del",
+            "tests": []
+        }
+    ]
+}
