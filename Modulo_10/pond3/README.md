@@ -1,32 +1,17 @@
-# 📒 API To-do list v2
+# 📲 Flutter w/ Login&Camera (Entrega parcial - WIP!)
 
-~(Entrega parcial 1)~
-
-~(Entrega parcial 2)~
-
-**Ponderada 2**
-
-> [!IMPORTANT]
-> Mudanças entre a primeira parcial (pond1) e essa (pond2):
-> - Dockerização
->   - Para executar o projeto, basta rodar `docker compose up` no diretório `Modulo_10/pond2`
-> - Servidor Gunicorn.
-> - Vídeo de demonstração da API.
-> Tirando isso, as funcionalidades são as mesmas da pond1 ⬇️
-
----
+https://github.com/paulo-evangelista/atividades-inteli/assets/99093520/39008361-63f2-42a2-8f5a-ed0084d0d077
 
 ## 🧩 Features
 
-- Threading desligado, totalmente síncrono.
-- As tarefas ficam em memória.
-- Autenticação (Basic Auth).
-- Documentação OpenAPI (em /static/collection.json).
-- Página Swagger.
-- Criar, listar, alterar e excluir tarefas.
+- Microserviços:
+    - Flask para autenticação
+    - _Outro Flask para processamento de imagens_ **(Work in Progress)**
+- Tirar e compartilhar fotos
+- Login & Signin (Com logging)
 
 ## ❓ Como executar
-- Clone o repositório e instale as bibliotecas necessárias com `pip3 install flask flask-swagger-ui Flask-HTTPAuth flask-CORS`
+- Clone o repositório e instale as bibliotecas necessárias com `pip3 install flask`
 - Rode o servidor com `python3 app.py`
-  - Para autenticação, use o usuário `paulo` e a senha `senha` 
-  - Acesse a documentação Swagger em `localhost:5000/docs`
+- Para o Flutter na pasta `app`, reinicie o projeto com `flutter create .` e rode na sua plataforma preferida com ` flutter run`
+    - Lembre-se de rodar ambos servidor e app em uma mesma rede local!📲
