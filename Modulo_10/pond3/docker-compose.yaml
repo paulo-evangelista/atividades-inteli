@@ -1,7 +1,12 @@
 
 services:
-    server:
+    auth-api:
         build:
-            context: api/
+            context: auth-api/
         ports:
           - 5000:5000
+    image-api:
+        build:
+            context: image-api/
+        ports:
+          - 5001:5001

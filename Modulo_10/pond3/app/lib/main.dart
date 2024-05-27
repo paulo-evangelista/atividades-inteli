@@ -4,10 +4,12 @@ import 'package:pond3/login_page.dart';
 import 'package:pond3/register_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,30 +17,32 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoginPage(),
+      home: const LoginPage(),
       routes: {
-        '/camera': (context) => CameraPreviewPage(),
-        '/home': (context) => HomePage(),
-        '/login': (context) => LoginPage(),
-        '/register': (context) => RegisterPage(),
+        '/camera': (context) => const CameraPreviewPage(),
+        '/home': (context) => const HomePage(),
+        '/login': (context) => const LoginPage(),
+        '/register': (context) => const RegisterPage(),
       },
     );
   }
 }
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: const Text('Home'),
       ),
       body: Center(
         child: ElevatedButton(
           onPressed: () {
             Navigator.pushNamed(context, '/camera');
           },
-          child: Text('Open Camera'),
+          child: const Text('Open Camera'),
         ),
       ),
     );

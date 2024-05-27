@@ -3,6 +3,8 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
+
   @override
   _RegisterPageState createState() => _RegisterPageState();
 }
@@ -20,7 +22,7 @@ class _RegisterPageState extends State<RegisterPage> {
       final String password = _passwordController.text;
 
       final response = await http.post(
-        Uri.parse('http://192.168.207.198:5000/register'),
+        Uri.parse('http://192.168.135.12:5000/register'),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
@@ -33,12 +35,12 @@ class _RegisterPageState extends State<RegisterPage> {
 
       if (response.statusCode == 201) {
                 ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Registered successfully')),
+          const SnackBar(content: Text('Registered successfully')),
         );
         Navigator.pushReplacementNamed(context, '/login');
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Register failed')),
+          const SnackBar(content: Text('Register failed')),
         );
       }
     }
@@ -48,10 +50,10 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Register'),
+        title: const Text('Register'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
           child: Column(
@@ -59,7 +61,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
               TextFormField(
                 controller: _nameController,
-                decoration: InputDecoration(labelText: 'Name'),
+                decoration: const InputDecoration(labelText: 'Name'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your name';
@@ -69,7 +71,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               TextFormField(
                 controller: _usernameController,
-                decoration: InputDecoration(labelText: 'Username'),
+                decoration: const InputDecoration(labelText: 'Username'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your username';
@@ -79,7 +81,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               TextFormField(
                 controller: _passwordController,
-                decoration: InputDecoration(labelText: 'Password'),
+                decoration: const InputDecoration(labelText: 'Password'),
                 obscureText: true,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -88,10 +90,10 @@ class _RegisterPageState extends State<RegisterPage> {
                   return null;
                 },
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: _register,
-                child: Text('Register'),
+                child: const Text('Register'),
               ),
             ],
           ),
