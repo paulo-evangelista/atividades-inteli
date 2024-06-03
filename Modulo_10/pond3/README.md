@@ -1,4 +1,4 @@
-# 📲 Flutter w/ Login&Camera (Entrega parcial - WIP!)
+# 📲 Flutter w/ Login&Camera
 
 https://github.com/paulo-evangelista/atividades-inteli/assets/99093520/47afe822-fb0f-42b6-a6c3-dd2f07ecff36
 
