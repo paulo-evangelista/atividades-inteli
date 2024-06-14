@@ -2,6 +2,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:http/http.dart' as http;
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+
+FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+    FlutterLocalNotificationsPlugin();
 
 class CameraPreviewPage extends StatefulWidget {
   const CameraPreviewPage({super.key});
@@ -19,6 +23,27 @@ class _CameraPreviewPageState extends State<CameraPreviewPage> {
   void initState() {
     super.initState();
     _initializeCamera();
+  }
+
+  void showLocalNotification() {
+    const AndroidNotificationDetails androidPlatformChannelSpecifics =
+        AndroidNotificationDetails(
+      '1',
+      'your channel name',
+      channelDescription: 'your channel description',
+      importance: Importance.max,
+      priority: Priority.high,
+      showWhen: false,
+    );
+    const NotificationDetails platformChannelSpecifics =
+        NotificationDetails(android: androidPlatformChannelSpecifics);
+
+    flutterLocalNotificationsPlugin.show(
+      0,
+      'Invertido!',
+      'Você inverteu uma imagem! Parabéns!',
+      platformChannelSpecifics,
+    );
   }
 
   Future<void> _initializeCamera() async {
@@ -68,6 +93,7 @@ class _CameraPreviewPageState extends State<CameraPreviewPage> {
       if (response.statusCode == 200) {
         var decodedResponse = json.decode(response.body);
         String processedImageBase64 = decodedResponse['image'];
+        showLocalNotification();
         _showImageModal(context, processedImageBase64);
       } else {
         print('Failed to process image');
@@ -86,7 +112,7 @@ class _CameraPreviewPageState extends State<CameraPreviewPage> {
       barrierDismissible: true, // Permite fechar o diálogo tocando fora dele
       builder: (BuildContext context) {
         return Dialog(
-          insetPadding: EdgeInsets.all(30),
+          insetPadding: const EdgeInsets.all(30),
           child: Transform.rotate(
               angle:
                   90 * 3.1415926535897932 / 180, // Converte graus para radianos
@@ -128,7 +154,7 @@ class _CameraPreviewPageState extends State<CameraPreviewPage> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: _isLoading
-                ? CircularProgressIndicator()
+                ? const CircularProgressIndicator()
                 : ElevatedButton(
                     onPressed: _takePictureAndProcess,
                     child: const Text('Tirar foto e processar'),

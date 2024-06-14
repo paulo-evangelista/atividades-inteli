@@ -15,6 +15,7 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
+
   Future<void> _register() async {
     if (_formKey.currentState!.validate()) {
       final String name = _nameController.text;

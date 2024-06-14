@@ -2,8 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:pond3/camera_page.dart';
 import 'package:pond3/login_page.dart';
 import 'package:pond3/register_page.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
-void main() {
+FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
+
+Future<void> initializeNotifications() async {
+  const AndroidInitializationSettings initializationSettingsAndroid = AndroidInitializationSettings('@mipmap/ic_launcher');
+  const InitializationSettings initializationSettings = InitializationSettings(
+    android: initializationSettingsAndroid,
+  );
+  await flutterLocalNotificationsPlugin.initialize(initializationSettings);
+} 
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initializeNotifications();
   runApp(const MyApp());
 }
 
