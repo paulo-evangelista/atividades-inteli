@@ -12,7 +12,7 @@ https://github.com/paulo-evangelista/atividades-inteli/assets/99093520/5d8f7843-
 **Atenção!!**
   - Infelizmente o Insomnia instalado pelo Snap não consegue exportar collections 😢
   - Bindei a porta 80 do NGINX para a 3000 do computador, e o NGINX faz o proxy_pass da rota `/api/` para o container da api na porta `8000`. Portanto o URL para acessar a API é `http://127.0.0.1:3000/api/`
-  - Fiz um Bind Mount para o arquivo de logs. Assim qualquer mudança feita nele dentro no container reflete no host.
+  - Fiz um Bind Mount para o arquivo de logs. Assim qualquer mudança feita nele dentro no container reflete no host em `api/logs.log`.
 
 ## ❓ Como executar
 - Clone o repositório e certifique-se que o docker está corretamente instalado.
